@@ -11,10 +11,13 @@ function sortNumeros(){
     }
     }
     console.log(numSort)
+    document.getElementById("sorteados").indexHTML= numSort;
+contarAcertos();
 }
+
 function lerNumero(value,pos){
 if(value < 1){
-    alert("Numero não pode ser 0 ou negativo seu otário! Digita essa coisa certa irmão!!!!")
+    alert("Numero não pode ser 0 ou negativo seu burro! Digita essa coisa certa!!!!")
 } else if(value > 60){
     alert("Numeros não podem ser maiores que 60, tu é burro ou oque???")
 }else if(numEsc.includes(value)){
@@ -22,5 +25,17 @@ if(value < 1){
 }else{
     numEsc[pos]=value
 console.log(numEsc)
+
 }
+
+function contarAcertos(){
+    let cont = 0;
+    numEsco.forEach(function(value, index){ 
+        if (numSort.includes(value)){
+            cont= cont+1;
+        }
+    })
+}
+document.getElementById("acertos").indexHTML = cont;
+
 }
